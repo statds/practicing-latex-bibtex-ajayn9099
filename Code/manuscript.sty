@@ -1,0 +1,117 @@
+\documentclass[12pt, letterpaper]{article}
+%\documentclass[12pt, letterpaper, titlepage]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks = true, linkcolor = blue, citecolor=blue, urlcolor = blue}
+\usepackage{natbib}
+\usepackage{enumitem}
+\usepackage{setspace}
+
+\title{Sample Manuscript - Homework 2}
+\author{Ajay Natarajan - University of Connecticut}
+\date{September 27, 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Abstract}
+Here, I would add in my abstract. I will use my proposed abstract for my presentation in here:
+
+Data analytics are a burgeoning field within the sports industry, where teams have transitioned from more traditional methods to using data to guide decision making, roster construction, recruiting, player evaluation, and more. Particularly on the player evaluation front, some sports have made further advances than others, especially baseball, where a common and publicly available stat, Wins Above Replacement (WAR), has revolutionized analysis. However, in American football, analysts have not made similar strides as quickly, and many existing methods are often proprietary, not reproducible, or lag behind other sports. I will be analyzing a study called “nflWAR: a Reproducible Method for Offensive Player Evaluation in Football”, published in the Journal of Quantitative Analysis in Sports by Yurko, Ventura, and Horowitz (2019) that has shown their methodology for “nflWAR” as a player evaluation statistic. I will first introduce the statistic and its relevance as well as previous methods, and then delve into its methodology and its applications to players, before bringing up several case studies from prior seasons. I will look at how well the model fits and its uncertainty. Finally, I will go over the statistic’s potential extensions to the game of football, and input my own conclusions and criticisms of the statistic and the study overall.
+
+\section{Keywords}
+Here is where I would add in keywords. I would not expect this section to be very long. For my presentation, some keywords and key-phrases I could potentially include are: 
+
+- Wins Above Replacement (WAR)
+
+- Player Evaluation
+
+- American Football
+
+- Sports Analytics
+
+\section{Introduction}
+Here is where I would add my introduction. I would introduce my topic and provide background information. For example, regarding my presentation, I could expand on this short background:
+
+Sports analytics are a growing field within multiple sports, and one of the most important functions of the work being done is to gain a competitive advantage in player evaluation. While many other sports have developed thorough and comprehensive player evaluation methods, such as baseball and WAR, American football has struggled to come up with as comprehensive a statistic.
+
+\section{Data}
+Here is where I would provide my sourcing of data, and describe important details in how my data is sourced and used. For example, here, I could talk about how my data is sourced from the 2019 NFL season and earlier, taking in NFL play-by-play data from the R package nflscrapR, as well as detailing the specific data involved.
+
+\section{Methods}
+Here, I would describe my methodology, as well as particular equations that went into my work, including in-line mathematical expressions. 
+
+For the paper I'm doing a presentation on, I could describe their methodology as using a multinomial logistic regression, featuring several covariates as listed below:
+
+\begin{equation}
+\begin{aligned}
+Y &\in \{ \text{Touchdown}(7), \text{Field Goal}(3), \text{Safety}(2), \text{No Score}(0), \\
+&\quad -\text{Touchdown}(-7), -\text{Field Goal}(-3), -\text{Safety}(-2) \}.
+\end{aligned}
+\end{equation}
+
+I could also further add equations, such as these below, to describe the play's expected points, such as:
+
+\begin{equation}
+E[P] = E\left[ Y \,|\, X \right] = \sum_y y \cdot P(Y = y \,|\, X).
+\end{equation}
+
+I could use in line mathematical expressions, such as $e = 0.022$ for the ordinal logistic regression error, or $EPA = 7 - 2.78 = 4.22$ for the Expected Points Added on the famous Philly Special play.
+
+\section{Simulation}
+
+From here, I could simulate my results and add my results to the manuscript. There is various data that I could input from my experimentation here. I could also add tables.
+\cite{statwriting}
+
+\section{Applications}
+
+Here I could go into detail with more tables and figures about the results of the data and how it would apply back to my overall thesis. For example, I've included a table and figure (with an example image) below regarding data from my presentation, and I can then summarize the data.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Position & Replacement & Total \\
+        \hline
+        QB & 25 & 71 \\
+        RB & 52 & 148 \\
+        WR & 73 & 201 \\
+        TE & 45 & 109 \\
+        \hline
+    \end{tabular}
+    \caption{Replacement Level Players By Position}
+    \label{tab:example-table}
+\end{table}
+\cite{yurko2019nflwar}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{example-image.jpg}
+    \caption{An example figure}
+    \label{fig:example-figure}
+\end{figure}
+\cite{yurko2019nflwar}
+
+\section{Discussion}
+Here, I can further summarize the results of my work, and how it would apply to my thesis, as well as looking further into potential future extensions of the work.
+\cite{statwriting}
+
+\section{Appendix}
+Here, I could input any lengthy codes or proofs that I did not have space for in the course of the manuscript.
+\cite{statwriting}
+
+\section{Acknowledgements}
+Here, I could further thank anyone who helped me with the work. For example, I could acknowledge Prof. Yan for creating the stats writing guide.
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+
+
+\end{document}
